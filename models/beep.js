@@ -1,6 +1,7 @@
 class Beep {
-  constructor (sound) {
+  constructor (sound, id) {
     this.audio = new Audio(sound);
+    this.id = id || Date.now();
   }
 
   play() {
@@ -9,5 +10,6 @@ class Beep {
 
   destroy() {
     this.audio = null;
+    this.id = null;
   }
 }
