@@ -7,7 +7,7 @@ class DrumsView {
   }
 
   init() {
-    const cnt = this.model.beeps.length;
+    const cnt = this.model.length;
     const hcnt = cnt % 2 == 0 ? cnt / 2 : (cnt + 1) / 2;
     const itemWidth = (this.element.offsetWidth - asafonov.settings.drumMargin * (hcnt + 1)) / hcnt;
     const itemHeight = (this.element.offsetHeight - asafonov.settings.drumMargin * 3) / 2;
@@ -17,6 +17,8 @@ class DrumsView {
       item.className = 'drum';
       item.setAttribute('data-name', k);
       item.style.margin = asafonov.settings.drumMargin + 'px';
+      item.style.width = itemWidth + 'px';
+      item.style.height = itemHeight + 'px';
       this.element.appendChild(item);
       item.addEventListener('click', this.onDrumClickedProxy);
     }
