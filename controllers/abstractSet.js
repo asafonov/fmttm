@@ -17,8 +17,8 @@ class AbstractSetController {
   }
 
   onBeep (data) {
-    if (this.model.data[data.name] !== null && this.model.data[data.name] !== undefined) {
-      this.model.data[data.name].play();
+    if (this.model.beeps[data.name] !== null && this.model.beeps[data.name] !== undefined) {
+      this.model.beeps[data.name].play();
     }
   }
 
