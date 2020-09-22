@@ -13,7 +13,7 @@ class DrumsView {
     const itemHeight = (this.element.offsetHeight - asafonov.settings.drumMargin * 3) / 2;
 
     for (let k in this.model.beeps) {
-      const item = document.createElement('div');
+      const item = document.createElement('button');
       item.className = 'drum';
       item.setAttribute('data-name', k);
       item.style.margin = asafonov.settings.drumMargin + 'px';
@@ -21,6 +21,7 @@ class DrumsView {
       item.style.height = itemHeight + 'px';
       this.element.appendChild(item);
       item.addEventListener('click', this.onDrumClickedProxy);
+      item.addEventListener('touchend', this.onDrumClickedProxy);
     }
   }
 
@@ -35,6 +36,7 @@ class DrumsView {
 
     for (let i = 0; i < items.length; ++i) {
       items[i].removeEventListener('click', this.onDrumClickedProxy);
+      items[i].removeEventListener('touchend', this.onDrumClickedProxy);
     }
 
     this.element.innerHTML = '';

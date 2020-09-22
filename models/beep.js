@@ -5,6 +5,7 @@ class Beep {
   }
 
   play() {
+    alert(this.id);
     this.audio.play();
   }
 
