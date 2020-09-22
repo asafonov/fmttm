@@ -4,4 +4,5 @@ window.asafonov.events = {
   BEEP: 'beep'
 };
 window.asafonov.settings = {
+  drumMargin: 10
 };
