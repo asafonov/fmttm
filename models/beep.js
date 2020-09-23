@@ -5,6 +5,8 @@ class Beep {
   }
 
   play() {
+    this.audio.pause();
+    this.audio.currentTime = 0;
     this.audio.play();
   }
 
