@@ -16,9 +16,11 @@ class DrumsView {
       const item = document.createElement('button');
       item.className = 'drum';
       item.setAttribute('data-name', k);
-      item.style.margin = asafonov.settings.drumMargin + 'px';
+      item.style.marginLeft = asafonov.settings.drumMargin + 'px';
+      item.style.marginTop = asafonov.settings.drumMargin + 'px';
       item.style.width = itemWidth + 'px';
       item.style.height = itemHeight + 'px';
+      item.innerHTML = k;
       this.element.appendChild(item);
       item.addEventListener('click', this.onDrumClickedProxy);
       item.addEventListener('touchend', this.onDrumClickedProxy);
