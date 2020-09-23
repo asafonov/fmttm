@@ -23,7 +23,6 @@ class DrumsView {
       item.innerHTML = k;
       this.element.appendChild(item);
       item.addEventListener('click', this.onDrumClickedProxy);
-      item.addEventListener('touchend', this.onDrumClickedProxy);
     }
   }
 
@@ -38,7 +37,6 @@ class DrumsView {
 
     for (let i = 0; i < items.length; ++i) {
       items[i].removeEventListener('click', this.onDrumClickedProxy);
-      items[i].removeEventListener('touchend', this.onDrumClickedProxy);
     }
 
     this.element.innerHTML = '';
